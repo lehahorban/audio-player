@@ -60,13 +60,14 @@ imgSrcPause.style.display = "none";
 function loadSong(song) {
   title.innerHTML = song;
   // audio.src = `audio/${song}.mp3`;
-  audio.src = `${window.location.origin}/audio/${song}.mp3`;
+  // audio.src = `${window.location.origin}/audio/${song}.mp3`;
+  audio.src = `./audio/${song}.mp3`;
 
   songTitle.innerHTML = song;
 }
 
 // Play
-function playSong(e) {
+function playSong() {
   player.classList.add("play");
   songTitle.classList.add("active");
   imgSrcPause.style.display = "block";
