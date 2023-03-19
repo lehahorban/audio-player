@@ -45,7 +45,7 @@ function getSongs() {
         .filter((name) => name.endsWith(".mp3"));
 
       const songsArr = fileNames.map((name) => name.slice(0, -4));
-      console.log(songsArr);
+      // console.log(songsArr);
       songs = [...songsArr];
       loadSong(songs[songIndex]);
     })
