@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Audio player</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="player">
+        <div class="title">Now Playing</div>
+        <div class="cover">
+          <!-- <img class="cover_img" src="./img/album.jpg" alt="" /> -->
+          <div class="song_title">Song</div>
+        </div>
+        <div class="song">Song</div>
+        <audio class="audio" src=""></audio>
+
+        <div class="progress_container">
+          <div class="progress"></div>
+        </div>
+        <div class="duration"></div>
+        <div class="buttons">
+          <div class="btn prev">
+            <img width="20" height="20" src="./img/prev.svg" alt="" />
+          </div>
+          <div class="btn play">
+            <img
+              width="20"
+              height="20"
+              class="img_src-play"
+              src="./img/play.svg"
+              alt=""
+            />
+            <img
+              width="20"
+              height="20"
+              class="img_src-pause"
+              src="./img/pause.svg"
+              alt=""
+            />
+          </div>
+          <div class="btn next">
+            <img width="20" height="20" src="./img/next.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
