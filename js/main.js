@@ -12,14 +12,14 @@ const songTitle = document.querySelector(".song_title");
 const durationItem = document.querySelector(".duration");
 
 // Songs title
-let songs = [];
-// const songs = [
-//   "Golubenko feat. Yaktak - Не Шукай",
-//   "Nichka - Краплями",
-//   "Nichka - Разом",
-//   "Nichka - Темні Кімнати",
-//   "Nichka feat. Golubenko - Забудь Мене",
-// ];
+// let songs = [];
+const songs = [
+  "Golubenko feat. Yaktak - Не Шукай",
+  "Nichka - Краплями",
+  "Nichka - Разом",
+  "Nichka - Темні Кімнати",
+  "Nichka feat. Golubenko - Забудь Мене",
+];
 
 // Get songs
 // function getSongs() {
@@ -41,24 +41,24 @@ let songs = [];
 //     })
 //     .catch((error) => console.error(error));
 // }
-function getSongs() {
-  fetch("audio/")
-    .then((response) => response.text())
-    .then((data) => {
-      const parser = new DOMParser();
-      const htmlDoc = parser.parseFromString(data, "text/html");
-      const fileNames = Array.from(htmlDoc.querySelectorAll("a"))
-        .map((a) => decodeURIComponent(a.href).split("/").pop())
-        .filter((name) => name.endsWith(".mp3"));
+// function getSongs() {
+//   fetch("audio/")
+//     .then((response) => response.text())
+//     .then((data) => {
+//       const parser = new DOMParser();
+//       const htmlDoc = parser.parseFromString(data, "text/html");
+//       const fileNames = Array.from(htmlDoc.querySelectorAll("a"))
+//         .map((a) => decodeURIComponent(a.href).split("/").pop())
+//         .filter((name) => name.endsWith(".mp3"));
 
-      const songsArr = fileNames.map((name) => name.slice(0, -4));
-      // console.log(songsArr);
-      songs = [...songsArr];
-      console.log(songs);
-      loadSong(songs[songIndex]);
-    })
-    .catch((error) => console.error(error));
-}
+//       const songsArr = fileNames.map((name) => name.slice(0, -4));
+//       // console.log(songsArr);
+//       songs = [...songsArr];
+//       console.log(songs);
+//       loadSong(songs[songIndex]);
+//     })
+//     .catch((error) => console.error(error));
+// }
 
 // Songs default
 let songIndex = 0;
@@ -156,5 +156,5 @@ progressContainer.addEventListener("click", setProgress);
 // Autoplay
 audio.addEventListener("ended", nextSong);
 
-getSongs();
-// loadSong(songs[songIndex]);
+// getSongs();
+loadSong(songs[songIndex]);
